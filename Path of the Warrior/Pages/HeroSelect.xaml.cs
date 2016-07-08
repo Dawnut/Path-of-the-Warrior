@@ -12,23 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Path_of_the_Warrior.Pages;
 
-namespace Path_of_the_Warrior
+namespace Path_of_the_Warrior.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HeroSelect.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HeroSelect : Page
     {
-        public MainWindow()
+        public HeroSelect()
         {
             InitializeComponent();
 
-            StartPage startPage = new StartPage();
-            mainFrame.NavigationService.Navigate(startPage);
+
         }
-
-
     }
 }
