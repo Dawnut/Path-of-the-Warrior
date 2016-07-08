@@ -1,1 +1,1 @@
-# Warrior-s-Path
+# Path of the Warrior
