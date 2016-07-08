@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DungeonProject;
 
 namespace Path_of_the_Warrior.Pages
 {
@@ -24,6 +25,11 @@ namespace Path_of_the_Warrior.Pages
         {
             InitializeComponent();
 
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

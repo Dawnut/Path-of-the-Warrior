@@ -55,6 +55,10 @@
             Storyboard.TargetName="Choose" 
             Storyboard.TargetProperty="(TextBlock.Height)"
             From="800" To="230" Duration="0:0:1" />
+                            <DoubleAnimation
+            Storyboard.TargetProperty="(TextBlock.Opacity)"
+            From="0" To="1.0" Duration="0:0:1.5" />
+
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -71,12 +75,14 @@
                             <DoubleAnimation
             Storyboard.TargetName="Characters" 
             Storyboard.TargetProperty="(TextBlock.Opacity)"
-            From="0" To="1.0" Duration="0:0:3" />
+            From="0" To="1.0" Duration="0:0:2" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
             </Grid.Triggers>
 
+            <Image Source="{StaticResource Archer}" 
+               Margin="-82,208,562.877,33.292"/>
             <Button HorizontalAlignment="Left" 
                 Margin="10,272,0,0" 
                 VerticalAlignment="Top" 
@@ -86,9 +92,8 @@
                 Height="411">
             </Button>
 
-            <Image Source="{StaticResource Archer}" 
-               Margin="-82,208,562.877,33.292"/>
-
+            <Image Source="{StaticResource Spearman}" 
+               Margin="608,257,9.877,50.292"/>
             <Button HorizontalAlignment="Left" 
                 Margin="663,272,-0.123,0" 
                 VerticalAlignment="Top" 
@@ -98,11 +103,11 @@
                 Height="428">
             </Button>
 
-            <Image Source="{StaticResource Spearman}" 
-               Margin="608,257,9.877,50.292"/>
-
+            <Image Source="{StaticResource Swordsman}" 
+               Margin="273,293,285.877,11.292" RenderTransformOrigin="0.563,0.343"/>
             <Button HorizontalAlignment="Left" 
                 Margin="321,309,0,0" 
+                Click="Button_Click"
                 VerticalAlignment="Top" 
                 Background="Transparent"
                 Cursor="Hand"
@@ -110,8 +115,7 @@
                 Height="424">
             </Button>
 
-            <Image Source="{StaticResource Swordsman}" 
-               Margin="273,293,285.877,11.292" RenderTransformOrigin="0.563,0.343"/>
+            
 
         </Grid>
     </Grid>

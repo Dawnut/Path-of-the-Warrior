@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DungeonProject
 {
-    class Character
+    public class Character
     {
         public string Name { get; set; }
         public int HP { get; set; }
