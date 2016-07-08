@@ -1,7 +1,13 @@
 ﻿using System;
 
-public class Trophy : Item
+namespace DungeonProject
 {
-    public Trophy(string Name, string Description) : base(Name, Description)
-    { }
+
+
+    public class Trophy : Item
+    {
+        public Trophy(string Name, string Description) : base(Name, Description)
+        { }
+    }
+
 }

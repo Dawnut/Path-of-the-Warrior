@@ -1,41 +1,30 @@
 ﻿using System;
 
-public abstract class Item
+namespace DungeonProject
 {
-    private string name;
-    private string description;
 
-    protected Item(string Name, string Description)
+    public abstract class Item : Nameable
     {
-        name = Name;
-        description = Description;
-    }
+        private string description;
 
-    public string Name
-    {
-        get
+        protected Item(string name, string Description) : base(name)
         {
-            return name;
+            description = Description;
         }
-        set
+
+
+        public string Description
         {
-            if (string.IsNullOrEmpty(value))
+            get
             {
-                throw new NullReferenceException("The name cannot be null or empty");
+                return description;
             }
-            name = value;
+            private set
+            {
+                description = value;
+            }
         }
     }
 
-    public string Description
-    {
-        get
-        {
-            return description;
-        }
-        private set
-        {
-            description = value;
-        }
-    }
+
 }
