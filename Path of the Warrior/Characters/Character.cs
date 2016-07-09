@@ -6,25 +6,19 @@ using System.Threading.Tasks;
 
 namespace DungeonProject
 {
-    class Character
+    /// <summary>
+    /// Main user character.
+    /// </summary>
+    class Character : HeroCharacter
     {
-        public string Name { get; set; }
-        public int HP { get; set; }
-        public int DMG { get; set; }
-
-        //public int Money { get; set; }
-        //public int maxWeight { get; set; }
-
-        public List<Item> inventory;
-        public List<object> myAddableList;
-        public List<object> myTrophyList;
-
+        public HeroType HeroProfession;
+        
         // Enemy constructor
         public Character(string name, int hp, int dmg)
         {
-            this.Name = name;
-            this.HP = hp;
-            this.DMG = dmg;
+            base.CharName = name;
+            base.HP = hp;
+            base.DMG = dmg;
         }
 
         //Hero constructor
@@ -33,8 +27,16 @@ namespace DungeonProject
         {
             this.myAddableList = myAddableList;
             this.myTrophyList = myTrophyList;
-            //this.Money = money;
-            //this.maxWeight = maxWeight;
+            base.CharMoney = money;
+            base.MaximumWeight = maxWeight;
+        }
+
+        //Constructor with hero type
+        public Character(HeroType heroType, string name, int hp, int dmg, int money, int maxWeight,
+            List<object> myAddableList, List<object> myTrophyList) 
+            : this(name, hp, dmg, money, maxWeight, myAddableList, myTrophyList)
+        {
+            this.HeroProfession = heroType;
         }
 
         //public void BuyStuff(Gear gear)

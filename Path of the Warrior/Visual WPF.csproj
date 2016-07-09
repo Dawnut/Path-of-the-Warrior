@@ -61,7 +61,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Characters\BaseCharacter.cs" />
     <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\EnemyCharacter.cs" />
+    <Compile Include="Characters\EnemyType.cs" />
+    <Compile Include="Characters\HeroCharacter.cs" />
+    <Compile Include="Characters\HeroType.cs" />
     <Compile Include="Engine\Battle.cs" />
     <Compile Include="Engine\Start.cs" />
     <Compile Include="Interfaces\Consumable.cs" />
