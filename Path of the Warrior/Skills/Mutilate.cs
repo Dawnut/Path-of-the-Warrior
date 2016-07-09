@@ -20,7 +20,16 @@ namespace Path_of_the_Warrior.Skills
         }
         public override int Calculate()
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            int chance = rnd.Next(1, 100);
+            if (chance < 50)
+            {
+                return 0;
+            }
+            else
+            {
+                return HP;
+            }
         }
     }
 }

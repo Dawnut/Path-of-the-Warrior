@@ -17,7 +17,7 @@ namespace Path_of_the_Warrior.Skills
 
         public override int Calculate()
         {
-            throw new NotImplementedException();
+            return HP;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Path_of_the_Warrior.Interfaces;
+﻿using Characters;
+using Path_of_the_Warrior.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,12 @@ namespace Path_of_the_Warrior.Skills
         }
         public override int Calculate()
         {
-            throw new NotImplementedException();
+            return HP;
+        }
+        public Character RestoreHealth(Character character)
+        {
+            character.HP += this.Calculate();
+            return character;
         }
     }
 }
