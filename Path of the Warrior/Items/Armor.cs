@@ -1,29 +1,26 @@
-﻿using System;
+﻿using Characters;
+using Interfaces;
+using System;
 
-namespace DungeonProject
+namespace Items
 {
 
-
-
-    public class Armor : Gear
+    public class Armor : Item, IHealthUp
     {
-        private int hP;
+        private int hp;
 
-        public Armor(string Name, string Description, int Cost, int Weight, int HP) : base(Name, Description, Cost, Weight)
+        public Armor(string Name, string Description, int hp)
+            : base(Name, Description)
         {
-            this.hP = HP;
+            this.BonusHealth = hp;
         }
 
-        public int HP
+
+        public int BonusHealth { get; set; }
+
+        public void AddHealth(Character character)
         {
-            get
-            {
-                return hP;
-            }
-            private set
-            {
-                hP = value;
-            }
+            character.HP += BonusHealth;
         }
     }
 

@@ -62,35 +62,36 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Enemy.cs" />
+    <Compile Include="Characters\Hero.cs" />
     <Compile Include="Engine\Battle.cs" />
-    <Compile Include="Engine\Start.cs" />
-    <Compile Include="Interfaces\Consumable.cs" />
-    <Compile Include="Interfaces\IDamageBoost.cs" />
-    <Compile Include="Interfaces\IPotion.cs" />
-    <Compile Include="Interfaces\Nameable.cs" />
-    <Compile Include="Interfaces\Trophy.cs" />
-    <Compile Include="Interfaces\Weapon.cs" />
+    <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Enumerations\WeaponTypes.cs" />
+    <Compile Include="Interfaces\IDamageUp.cs" />
+    <Compile Include="Interfaces\IHealthUp.cs" />
+    <Compile Include="Items\Nameable.cs" />
+    <Compile Include="Items\Trophy.cs" />
+    <Compile Include="Items\Weapon.cs" />
     <Compile Include="Items\Armor.cs" />
-    <Compile Include="Items\Gear.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\HeroSelect.xaml">
+    <Page Include="WPF\Pages\HeroSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\StartPage.xaml">
+    <Page Include="WPF\Pages\StartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\HeroSelect.xaml.cs">
+    <Compile Include="WPF\Pages\HeroSelect.xaml.cs">
       <DependentUpon>HeroSelect.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\StartPage.xaml.cs">
+    <Compile Include="WPF\Pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -110,7 +111,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\msyi.ttf" />
+    <Resource Include="WPF\Fonts\msyi.ttf" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -121,16 +123,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\map.jpg" />
+    <Resource Include="WPF\Images\map.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\blur.jpg" />
+    <Resource Include="WPF\Images\blur.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\archer.png" />
-    <Resource Include="Images\spearman.png" />
-    <Resource Include="Images\swordsman.png" />
+    <Resource Include="WPF\Images\archer.png" />
+    <Resource Include="WPF\Images\spearman.png" />
+    <Resource Include="WPF\Images\swordsman.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

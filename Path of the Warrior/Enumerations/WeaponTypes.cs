@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Classes_and_Interfaces.Interfaces
+namespace Enumerations
 {
-    class IPotion
-    {
-    }
+    enum WeaponType { Sword, Spear, Bow}
 }

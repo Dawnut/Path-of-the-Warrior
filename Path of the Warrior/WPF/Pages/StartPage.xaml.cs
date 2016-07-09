@@ -12,25 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DungeonProject;
 
-namespace Path_of_the_Warrior.Pages
+namespace Pages
 {
     /// <summary>
-    /// Interaction logic for HeroSelect.xaml
+    /// Interaction logic for StartPage.xaml
     /// </summary>
-    public partial class HeroSelect : Page
+    public partial class StartPage : Page
     {
-        public HeroSelect()
+        public StartPage()
         {
             InitializeComponent();
-
-
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void startButton_Click(object sender, RoutedEventArgs e)
         {
-
+            HeroSelect heroSelect = new HeroSelect();
+            this.NavigationService.Navigate(heroSelect);
         }
+
+        
     }
 }

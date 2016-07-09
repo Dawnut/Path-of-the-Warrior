@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DungeonProject
+namespace Items
 {
-    public class Nameable
+    public abstract class Nameable
     {
         private string name;
 

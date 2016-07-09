@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pages;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,12 @@ namespace Path_of_the_Warrior
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var mainWindow = new HeroSelect();
+
+        }
     }
 }

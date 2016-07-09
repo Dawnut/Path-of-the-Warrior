@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace DungeonProject
+namespace Items
 {
-
     public abstract class Item : Nameable
     {
         private string description;
 
-        protected Item(string name, string Description) : base(name)
+        protected Item(string name, string Description = null) : base(name)
         {
             description = Description;
         }
