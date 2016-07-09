@@ -31,7 +31,7 @@ namespace Items
             this.Name = name;
         }
 
-
+        public Nameable() { }
     }
 
 }

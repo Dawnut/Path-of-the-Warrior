@@ -12,39 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Engine;
-using Characters;
-using Items;
-using PathOfTheWarrior;
 
-
-namespace Pages
+namespace Path_of_the_Warrior.WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for HeroSelect.xaml
+    /// Interaction logic for ArmorSelect.xaml
     /// </summary>
-    public partial class HeroSelect : Page
+    public partial class ArmorSelect : Page
     {
-        public HeroSelect()
+        public ArmorSelect()
         {
             InitializeComponent();
-
         }
 
-        private void Swordsman_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
-        private void Spearman_Click(object sender, RoutedEventArgs e)
+        private void Light_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-        private void Archer_Click(object sender, RoutedEventArgs e)
+        private void Medium_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        private void Heavy_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

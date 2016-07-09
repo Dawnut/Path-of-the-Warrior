@@ -11,7 +11,7 @@ namespace Characters
     {
        public Item Loot { get; set; }
 
-        public Enemy(string name, int hp, int dmg, Item loot) :base(name,hp,dmg)
+        public Enemy(string name, int hp, int dmg, Item loot) :base(hp,dmg)
         {
             this.Loot = loot;
         }

@@ -1,6 +1,7 @@
 ﻿using Characters;
 using Interfaces;
 using System;
+using System.Windows.Media;
 
 namespace Items
 {
@@ -9,10 +10,21 @@ namespace Items
     {
         private int hp;
 
+        public ImageSource Avatar { get; set; }
+
         public Armor(string Name, string Description, int hp)
             : base(Name, Description)
         {
             this.BonusHealth = hp;
+        }
+
+        public Armor(int hp) 
+        {
+            this.BonusHealth = hp;
+        }
+
+        public Armor() 
+        {
         }
 
 

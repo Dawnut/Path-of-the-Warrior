@@ -7,5 +7,11 @@
     
     <Frame x:Name="mainFrame" Content="" NavigationUIVisibility="Hidden"/>
 
-    
+    <Window.Resources>
+        <BitmapImage x:Key="Map" UriSource="WPF/Images/map.jpg" />
+        <BitmapImage x:Key="Light" UriSource="WPF/Images/lightArmor.png" />
+        <BitmapImage x:Key="Medium" UriSource="WPF/Images/mediumArmor.png" />
+        <BitmapImage x:Key="Heavy" UriSource="WPF/Images/heavyArmor.png" />
+
+    </Window.Resources>
 </Window>

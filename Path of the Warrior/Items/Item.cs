@@ -6,10 +6,17 @@ namespace Items
     {
         private string description;
 
-        protected Item(string name, string Description = null) : base(name)
+        protected Item(string name, string Description) : base(name)
         {
             description = Description;
         }
+
+        protected Item(string name)
+            : base(name)
+        {
+        }
+
+        protected Item() { }
 
 
         public string Description

@@ -4,35 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Characters
 {
     public class Hero :Character
     {
-        public List<Item> inventory {get; set;}
+        public List<Item> Inventory {get; set;}
+        public ImageSource Avatar { get; set; }
 
-        public Hero(string name, int hp, int dmg, List<Item> inventory) :base(name,hp,dmg)
+        public Hero() 
         {
-            this.inventory = new List<Item>();
+            this.Inventory = new List<Item>();
         }
 
-        public class Singleton
+        public Hero(int hp, int dmg, List<Item> inventory) :base(hp,dmg)
         {
-            private static Singleton instance;
-
-            private Singleton() { }
-
-            public static Singleton Instance
-            {
-                get
-                {
-                    if (instance == null)
-                    {
-                        instance = new Singleton();
-                    }
-                    return instance;
-                }
-            }
+            this.Inventory = new List<Item>();
         }
+
     }
 }

@@ -1,17 +1,26 @@
 ﻿using Characters;
 using Interfaces;
 using System;
+using System.Windows.Media;
 namespace Items
 {
     public class Weapon : Item, IDamageUp
     {
-        private int dmg;
+        public ImageSource Avatar {get; set;}
 
         public Weapon(string Name, string Description, int dmg)
             : base(Name, Description)
         {
             this.BonusDamage = dmg;
         }
+
+        public Weapon(string Name, int dmg)
+            : base(Name)
+        {
+            this.BonusDamage = dmg;
+        }
+
+        public Weapon() { }
 
         public int BonusDamage { get; set; }
 

@@ -25,12 +25,9 @@ namespace Pages
             InitializeComponent();
         }
 
-        private void startButton_Click(object sender, RoutedEventArgs e)
+        public void startButton_Click(object sender, RoutedEventArgs e)
         {
-            HeroSelect heroSelect = new HeroSelect();
-            this.NavigationService.Navigate(heroSelect);
-        }
 
-        
+        }
     }
 }
