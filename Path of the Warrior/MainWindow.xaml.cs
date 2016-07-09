@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Pages;
-using PathOfTheWarrior;
 using Characters;
 using Items;
 using Path_of_the_Warrior.WPF.Pages;

@@ -67,6 +67,7 @@
     <Compile Include="Enumerations\WeaponTypes.cs" />
     <Compile Include="Interfaces\IDamageUp.cs" />
     <Compile Include="Interfaces\IHealthUp.cs" />
+    <Compile Include="Interfaces\ISkill.cs" />
     <Compile Include="Items\Nameable.cs" />
     <Compile Include="Items\Trophy.cs" />
     <Compile Include="Items\Weapon.cs" />
@@ -90,6 +91,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Skills\Heal.cs" />
+    <Compile Include="Skills\Mutilate.cs" />
+    <Compile Include="Skills\PrecisionStrike.cs" />
+    <Compile Include="Skills\Skill.cs" />
     <Compile Include="WPF\Pages\ArmorSelect.xaml.cs">
       <DependentUpon>ArmorSelect.xaml</DependentUpon>
     </Compile>
