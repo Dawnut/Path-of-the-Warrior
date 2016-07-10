@@ -1,13 +1,14 @@
-﻿using Interfaces;
-using System;
-using System.Windows.Media;
-
-namespace Items
+﻿namespace PathOfTheWarrior.Items
 {
-    public class Trophy : Item, IHasAvatar
+    using Interfaces;
+
+    public class Trophy : Item, IHasAvatar, INameable
     {
 
-        public Trophy(string Name, string Description) : base(Name, Description) { }
+        private string description;
+        public string Description { get { return description; } private set { this.description = value; } }
+
+        public Trophy(string name, string description) : base(name) { this.Description = description; }
 
     }
 

@@ -1,29 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Pages;
-using Characters;
-using Items;
-using Path_of_the_Warrior.WPF.Pages;
-using Path_of_the_Warrior.Skills;
-
-
-namespace Path_of_the_Warrior
+﻿namespace PathOfTheWarrior.WPF
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Media.Imaging;
+    using Pages;
+    using Characters;
+    using Items;
+    using Skills;    
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+                     /// Interaction logic for MainWindow.xaml
+                     /// </summary>
     public partial class MainWindow : Window
     {
         StartPage startPage = new StartPage();

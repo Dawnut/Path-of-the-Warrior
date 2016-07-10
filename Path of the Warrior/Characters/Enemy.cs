@@ -1,16 +1,12 @@
-﻿using Interfaces;
-using Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Characters
+﻿namespace PathOfTheWarrior.Characters
 {
-    public class Enemy : Character, IHasAvatar
+    using Interfaces;
+    using Items;
+
+    public class Enemy : Character, INameable, IHasAvatar, ICharacter
     {
-       public Item Loot { get; set; }
+        private Item loot;
+        public Item Loot { get { return loot; } set { this.loot = value; } }
 
         public Enemy(string name, int hp, int dmg, Item loot) :base(hp,dmg)
         {
