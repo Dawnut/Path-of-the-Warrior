@@ -1,17 +1,25 @@
-﻿namespace PathOfTheWarrior.Skills
-{
-    using Interfaces;
-    using System;
+﻿using Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    class Mutilate : Skill, IHasAvatar, INameable
+namespace Path_of_the_Warrior.Skills
+{
+    class Mutilate : Skill, IHasAvatar
     {
 
-        public Mutilate() { }
+        public Mutilate()
+        {
+
+        }
         public Mutilate(string name, int damage)
         {
             this.Name = name;
             this.HP = damage;
         }
+
 
         public override int Calculate()
         {

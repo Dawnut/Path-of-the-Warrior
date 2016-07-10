@@ -1,18 +1,34 @@
-﻿namespace PathOfTheWarrior.Items
+﻿using Characters;
+using Interfaces;
+using System;
+using System.Windows.Media;
+
+namespace Items
 {
-    using Interfaces;
 
-    public class Armor : Item, IHealthUp, IHasAvatar, INameable
+    public class Armor : Item, IHealthUp, IHasAvatar
     {
-        private int bonusHealth;
-        public int BonusHealth { get { return bonusHealth; } set { this.bonusHealth = value; } }
+        private int hp;
 
-        public Armor() { }
-        public Armor(int bonusHP) { this.BonusHealth = bonusHP; }
-        public Armor(string Name, int bonusHP) : base(Name) { this.BonusHealth = bonusHP; }
+        public Armor(string Name, string Description, int hp)
+            : base(Name, Description)
+        {
+            this.BonusHealth = hp;
+        }
+
+        public Armor(int hp) 
+        {
+            this.BonusHealth = hp;
+        }
+
+        public Armor() 
+        {
+        }
 
 
-        public void AddHealth(ICharacter character)
+        public int BonusHealth { get; set; }
+
+        public void AddHealth(Character character)
         {
             character.HP += BonusHealth;
         }

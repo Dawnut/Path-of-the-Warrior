@@ -1,18 +1,22 @@
-﻿namespace PathOfTheWarrior.Characters
-{
-    using Interfaces;
-    using Items;
-    using System.Collections.Generic;
+﻿using Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Media;
 
-    public class Hero : Character, INameable, IHasAvatar, ICharacter
+namespace Characters
+{
+    public class Hero :Character
     {
-        private List<Item> inventory;
-        public List<Item> Inventory { get { return inventory; } set { this.inventory = value; } }
+        public List<Item> Inventory {get; set;}
 
         public Hero() 
         {
             this.Inventory = new List<Item>();
         }
+
         public Hero(int hp, int dmg, List<Item> inventory) :base(hp,dmg)
         {
             this.Inventory = new List<Item>();

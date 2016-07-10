@@ -1,15 +1,28 @@
-﻿namespace PathOfTheWarrior.Items
+﻿using Characters;
+using Interfaces;
+using System;
+using System.Windows.Media;
+namespace Items
 {
-    using Interfaces;
     public class Weapon : Item, IDamageUp, IHasAvatar
     {
-        private int bonusDamage;
-        public int BonusDamage { get { return bonusDamage; } set { this.bonusDamage = value; } }
+        public Weapon(string Name, string Description, int dmg)
+            : base(Name, Description)
+        {
+            this.BonusDamage = dmg;
+        }
+
+        public Weapon(string Name, int dmg)
+            : base(Name)
+        {
+            this.BonusDamage = dmg;
+        }
 
         public Weapon() { }
-        public Weapon(string Name, int dmg) : base(Name) { this.BonusDamage = dmg; }
 
-        public void AddDamage(ICharacter character)
+        public int BonusDamage { get; set; }
+
+        public void AddDamage(Character character)
         {
             character.DMG += BonusDamage;
         }

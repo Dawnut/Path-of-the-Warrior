@@ -1,31 +1,20 @@
-﻿namespace PathOfTheWarrior.Characters
+﻿using Interfaces;
+using Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Media;
+
+namespace Characters
 {
-    using Interfaces;
-    using System;
-    using System.Windows.Media;
-
-    public class Character : INameable, IHasAvatar, ICharacter
+    public class Character :Nameable, IHasAvatar
     {
-        private string name;
-        private int hp;
-        private int dmg;
-        private ImageSource avatar;
+        public int HP { get; set; }
+        public int DMG { get; set; }
 
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new NullReferenceException("The name cannot be null or empty");
-                }
-                this.name = value;
-            }
-        }
-        public int HP { get { return hp; } set { this.hp = value; } }
-        public int DMG { get { return dmg; } set { this.dmg = value; } }
-        public ImageSource Avatar { get { return avatar; } set { this.avatar = value; } }
+        public ImageSource Avatar { get; set; }
 
         public Character() { }
 
@@ -35,13 +24,13 @@
             this.DMG = dmg;
         }
 
-        public Character(string name, int hp, int dmg)
+        public Character(string name, int hp, int dmg) :base(name)
         {
             this.Name = name;
             this.HP = hp;
             this.DMG = dmg;
         }
-
+        
     }
 
 }

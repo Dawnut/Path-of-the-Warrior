@@ -1,12 +1,16 @@
-﻿namespace PathOfTheWarrior.Characters
-{
-    using Interfaces;
-    using Items;
+﻿using Interfaces;
+using Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    public class Enemy : Character, INameable, IHasAvatar, ICharacter
+namespace Characters
+{
+    public class Enemy : Character, IHasAvatar
     {
-        private Item loot;
-        public Item Loot { get { return loot; } set { this.loot = value; } }
+       public Item Loot { get; set; }
 
         public Enemy(string name, int hp, int dmg, Item loot) :base(hp,dmg)
         {

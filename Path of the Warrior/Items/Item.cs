@@ -1,19 +1,40 @@
-﻿namespace PathOfTheWarrior.Items
-{
-    using Interfaces;
-    using System.Windows.Media;
+﻿using Interfaces;
+using System;
+using System.Windows.Media;
 
-    public abstract class Item : INameable, IHasAvatar
+namespace Items
+{
+    public abstract class Item : Nameable, IHasAvatar
     {
-        private ImageSource avatar;
-        private string name;
+        private string description;
 
         public ImageSource Avatar { get; set; }
-        public string Name { get; set; }
+
+        protected Item(string name, string Description) : base(name)
+        {
+            description = Description;
+        }
+
+        protected Item(string name)
+            : base(name)
+        {
+        }
 
         protected Item() { }
-        protected Item(string name) { this.Name = name; }
-     
+
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            private set
+            {
+                description = value;
+            }
+        }
+
     }
 
 
