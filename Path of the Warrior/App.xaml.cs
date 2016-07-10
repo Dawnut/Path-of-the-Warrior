@@ -1,14 +1,8 @@
-﻿using Pages;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace Path_of_the_Warrior
+﻿namespace PathOfTheWarrior.WPF
 {
+    using Pages;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

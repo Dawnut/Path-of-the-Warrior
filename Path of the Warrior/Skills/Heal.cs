@@ -1,14 +1,9 @@
-﻿using Characters;
-using Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Path_of_the_Warrior.Skills
+﻿namespace PathOfTheWarrior.Skills
 {
-    class Heal : Skill, IHasAvatar
+    using Characters;
+    using Interfaces;
+
+    class Heal : Skill, IHasAvatar, INameable
     {
         public Heal(string name, int hp)
         {

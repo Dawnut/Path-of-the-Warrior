@@ -1,20 +1,14 @@
-﻿using Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Path_of_the_Warrior.Skills
+﻿namespace PathOfTheWarrior.Skills
 {
-    class PrecisionStrike : Skill, IHasAvatar
+    using Interfaces;
+
+    class PrecisionStrike : Skill, IHasAvatar, INameable
     {
         public PrecisionStrike(string name, int damage)
         {
             this.Name = name;
             this.HP = damage;
         }
-
         public PrecisionStrike() { }
 
         public override int Calculate()
