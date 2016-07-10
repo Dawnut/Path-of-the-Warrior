@@ -4,10 +4,8 @@ using System;
 using System.Windows.Media;
 namespace Items
 {
-    public class Weapon : Item, IDamageUp
+    public class Weapon : Item, IDamageUp, IHasAvatar
     {
-        public ImageSource Avatar {get; set;}
-
         public Weapon(string Name, string Description, int dmg)
             : base(Name, Description)
         {

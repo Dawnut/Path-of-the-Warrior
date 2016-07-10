@@ -1,4 +1,5 @@
-﻿using Items;
+﻿using Interfaces;
+using Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,12 @@ using System.Windows.Media;
 
 namespace Characters
 {
-    public class Character :Nameable
+    public class Character :Nameable, IHasAvatar
     {
         public int HP { get; set; }
         public int DMG { get; set; }
+
+        public ImageSource Avatar { get; set; }
 
         public Character() { }
 
@@ -27,8 +30,7 @@ namespace Characters
             this.HP = hp;
             this.DMG = dmg;
         }
-
-
+        
     }
 
 }

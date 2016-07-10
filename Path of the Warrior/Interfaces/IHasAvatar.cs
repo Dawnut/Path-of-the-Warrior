@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Interfaces
 {
-    interface ISkill
+    public interface IHasAvatar
     {
-        int Calculate();
+         ImageSource Avatar { get; set; }
     }
 }

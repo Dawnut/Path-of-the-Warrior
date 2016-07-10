@@ -1,4 +1,4 @@
-﻿using Path_of_the_Warrior.Interfaces;
+﻿using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +7,20 @@ using System.Threading.Tasks;
 
 namespace Path_of_the_Warrior.Skills
 {
-    class Mutilate : Skill, ISkill
+    class Mutilate : Skill, IHasAvatar
     {
 
         public Mutilate()
         {
+
         }
         public Mutilate(string name, int damage)
         {
             this.Name = name;
             this.HP = damage;
         }
+
+
         public override int Calculate()
         {
             Random rnd = new Random();

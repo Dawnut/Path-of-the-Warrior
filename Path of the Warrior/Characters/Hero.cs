@@ -11,7 +11,6 @@ namespace Characters
     public class Hero :Character
     {
         public List<Item> Inventory {get; set;}
-        public ImageSource Avatar { get; set; }
 
         public Hero() 
         {

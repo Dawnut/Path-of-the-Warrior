@@ -1,4 +1,5 @@
-﻿using Items;
+﻿using Interfaces;
+using Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Characters
 {
-    public class Enemy : Character
+    public class Enemy : Character, IHasAvatar
     {
        public Item Loot { get; set; }
 

@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Interfaces;
+using System;
+using System.Windows.Media;
 
 namespace Items
 {
-    public abstract class Item : Nameable
+    public abstract class Item : Nameable, IHasAvatar
     {
         private string description;
+
+        public ImageSource Avatar { get; set; }
 
         protected Item(string name, string Description) : base(name)
         {
@@ -30,6 +34,7 @@ namespace Items
                 description = value;
             }
         }
+
     }
 
 

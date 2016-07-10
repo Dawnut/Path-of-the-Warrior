@@ -6,11 +6,9 @@ using System.Windows.Media;
 namespace Items
 {
 
-    public class Armor : Item, IHealthUp
+    public class Armor : Item, IHealthUp, IHasAvatar
     {
         private int hp;
-
-        public ImageSource Avatar { get; set; }
 
         public Armor(string Name, string Description, int hp)
             : base(Name, Description)
