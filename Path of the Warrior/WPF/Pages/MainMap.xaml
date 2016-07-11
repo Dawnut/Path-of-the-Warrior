@@ -174,7 +174,7 @@
                        FontSize="80"
                        Foreground="Yellow"
                        HorizontalAlignment="Center" Margin="606,106,102.877,480.292" Width="291"/>
-            <TextBlock Text="ENCOUTNER"
+            <TextBlock Text="ENCOUNTER"
                        FontSize="70"
                        FontWeight="light"
                        Foreground="White"
