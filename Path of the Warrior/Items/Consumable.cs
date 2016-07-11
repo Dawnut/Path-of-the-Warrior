@@ -1,4 +1,4 @@
-﻿using Items;
+﻿using PathOfTheWarrior.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace  PathOfTheWarrior.Items
             this.bonusHealth = value; 
         } 
         }
-        public virtual void DrinkPotion(ICharacter character)
+        public abstract virtual void DrinkPotion(ICharacter character)
         {
                     
         }

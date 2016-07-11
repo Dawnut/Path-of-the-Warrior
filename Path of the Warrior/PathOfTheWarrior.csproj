@@ -71,6 +71,7 @@
     <Compile Include="Interfaces\IHealthUp.cs" />
     <Compile Include="Interfaces\ISkill.cs" />
     <Compile Include="Interfaces\INameable.cs" />
+    <Compile Include="Items\Consumable.cs" />
     <Compile Include="Items\Trophy.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Items\Armor.cs" />
