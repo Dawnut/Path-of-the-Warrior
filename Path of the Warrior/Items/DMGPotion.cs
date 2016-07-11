@@ -12,7 +12,7 @@ namespace PathOfTheWarrior.Items
     {
         public ImageSource Avatar { get; set; }
 
-        public HealthPotion(int bonusStat)
+        public DMGPotion(int bonusStat)
             : base(bonusStat) { }
 
         public override void DrinkPotion(ICharacter character)
