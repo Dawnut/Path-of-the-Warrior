@@ -62,7 +62,7 @@
         <Image Name="WeaponImage" Margin="188,625,664.877,0.292"/>
         <Image Name="ArmorImage" Margin="281,625,571.877,0.292"/>
         <Image Name="LootImage1" Margin="386,626,466.877,-0.708"/>
-        <Image Name="LootImage2" Margin="503,626,349.877,-0.708"/>
+        <Image Name="LootImage2" Margin="473,625,379.877,0.292"/>
         <Image Name="LootImage3" Margin="625,626,227.877,-0.708"/>
         <Image Name="SkillImage" Margin="863,615,-0.123,-0.708"/>
         <Image Name="Matt4" Margin="62,128,782.877,470.292" 
@@ -96,7 +96,7 @@
                    FontSize="40"
                    FontWeight="Light"
                    Foreground="White" 
-                   Margin="134,615,733.877,28.292"
+                   Margin="101,615,766.877,27.292"
             />
 
         <Button Name="spellButton"
