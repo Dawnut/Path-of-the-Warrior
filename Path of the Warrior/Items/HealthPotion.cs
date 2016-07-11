@@ -1,27 +1,23 @@
-﻿using System;
+﻿using PathOfTheWarrior.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace PathOfTheWarrior.Items
 {
-    class HealthPotion : Consumable
+    class HealthPotion : Consumable, IHasAvatar
     {
-        private int bonusHealth;
-        public int BonusHealth { 
-            get 
-            {
-                return bonusHealth = BonusStat; 
-            } 
-            set 
-            { 
-                this.bonusHealth = value;
-            } 
-        }
-        public abstract override int DrinkPotion(ICharacter character)
+        public ImageSource Avatar { get; set; }
+
+        public HealthPotion(int bonusStat)
+            : base(bonusStat) { }
+
+        public override void DrinkPotion(ICharacter character)
         {
-            return character.HP += bonusHealth;
+            character.HP += this.BonusStat;
         }
 
     }
