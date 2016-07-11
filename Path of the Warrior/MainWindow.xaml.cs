@@ -8,8 +8,8 @@
     using Items;
     using Skills;    
     /// <summary>
-                     /// Interaction logic for MainWindow.xaml
-                     /// </summary>
+     /// Interaction logic for MainWindow.xaml
+     /// </summary>
     public partial class MainWindow : Window
     {
         StartPage startPage = new StartPage();
@@ -19,8 +19,7 @@
         Hero myHero = new Hero();
         Weapon mainWeapon = new Weapon();
         Armor armor = new Armor();
-        Skill skill = new Heal(); // heal by default, can be changed when Player picks skill
-
+        Skill skill = new Heal("FastHeal",25); // heal by default, can be changed when Player picks skill
 
         public MainWindow()
         {
@@ -56,68 +55,83 @@
 
         private void Swordsman_Click(object sender, RoutedEventArgs e)
         {
-            myHero.Avatar = new BitmapImage(new Uri("WPF/Images/swordsman.png", UriKind.RelativeOrAbsolute));
-            mainWeapon.Avatar = new BitmapImage(new Uri("WPF/Images/sword.png", UriKind.RelativeOrAbsolute));
+            myHero.Avatar = new BitmapImage(new Uri("../Images/swordsman.png", UriKind.RelativeOrAbsolute));
+            mainWeapon.Avatar = new BitmapImage(new Uri("../Images/sword.png", UriKind.RelativeOrAbsolute));
+            mainWeapon.BonusDamage = 70;
+            mainWeapon.AddDamage(myHero);
             mainFrame.NavigationService.Navigate(armorSelect);
 
         }
 
         private void Spearman_Click(object sender, RoutedEventArgs e)
         {
-            myHero.Avatar = new BitmapImage(new Uri("WPF/Images/spearman.png", UriKind.RelativeOrAbsolute));
-            mainWeapon.Avatar = new BitmapImage(new Uri("WPF/Images/spear.png", UriKind.RelativeOrAbsolute));
+            myHero.Avatar = new BitmapImage(new Uri("../Images/spearman.png", UriKind.RelativeOrAbsolute));
+            mainWeapon.Avatar = new BitmapImage(new Uri("../Images/spear.png", UriKind.RelativeOrAbsolute));
+            mainWeapon.BonusDamage = 45;
+            mainWeapon.AddDamage(myHero);
             mainFrame.NavigationService.Navigate(armorSelect);
 
         }
 
         private void Archer_Click(object sender, RoutedEventArgs e)
         {
-            myHero.Avatar = new BitmapImage(new Uri("WPF/Images/archer.png", UriKind.RelativeOrAbsolute));
-            mainWeapon.Avatar = new BitmapImage(new Uri("WPF/Images/bow.png", UriKind.RelativeOrAbsolute));
+            myHero.Avatar = new BitmapImage(new Uri("../Images/archer.png", UriKind.RelativeOrAbsolute));
+            mainWeapon.Avatar = new BitmapImage(new Uri("../Images/bow.png", UriKind.RelativeOrAbsolute));
+            mainWeapon.BonusDamage = 100;
+            mainWeapon.AddDamage(myHero);
             mainFrame.NavigationService.Navigate(armorSelect);
 
         }
 
         private void Light_Click(object sender, RoutedEventArgs e)
         {
-            armor.Avatar = new BitmapImage(new Uri("WPF/Images/lightArmor.png", UriKind.RelativeOrAbsolute));
+            armor.Avatar = new BitmapImage(new Uri("../Images/lightArmor.png", UriKind.RelativeOrAbsolute));
+            armor.BonusHealth = 40;
+            armor.AddHealth(myHero);
             mainFrame.NavigationService.Navigate(skillSelect);
         }
 
         private void Medium_Click(object sender, RoutedEventArgs e)
         {
-            armor.Avatar = new BitmapImage(new Uri("WPF/Images/mediumArmor.png", UriKind.RelativeOrAbsolute));
+            armor.Avatar = new BitmapImage(new Uri("../Images/mediumArmor.png", UriKind.RelativeOrAbsolute));
+            armor.BonusHealth = 50;
+            armor.AddHealth(myHero);
             mainFrame.NavigationService.Navigate(skillSelect);
         }
 
         private void Heavy_Click(object sender, RoutedEventArgs e)
         {
-            armor.Avatar = new BitmapImage(new Uri("WPF/Images/heavyArmor.png", UriKind.RelativeOrAbsolute));
+            armor.Avatar = new BitmapImage(new Uri("../Images/heavyArmor.png", UriKind.RelativeOrAbsolute));
+            armor.BonusHealth = 60;
+            armor.AddHealth(myHero);
             mainFrame.NavigationService.Navigate(skillSelect);
         }
 
         public void Mutilate_Click(object sender, RoutedEventArgs e)
         {
             skill = new Mutilate("Mutilate",50);
-            skill.Avatar = new BitmapImage(new Uri("WPF/Images/mutilate.png", UriKind.RelativeOrAbsolute));
-          //  mainFrame.NavigationService.Navigate(map);
+            skill.Avatar = new BitmapImage(new Uri("../Images/mutilate.png", UriKind.RelativeOrAbsolute));
+            MainMap mainMap = new MainMap(myHero, mainWeapon, armor, skill); 
+            mainFrame.NavigationService.Navigate(mainMap);
         }
 
         public void PrecisionStrike_Click(object sender, RoutedEventArgs e)
         {
             skill = new Mutilate("Mutilate", 60);
-            skill.Avatar = new BitmapImage(new Uri("WPF/Images/precisionStrike.png", UriKind.RelativeOrAbsolute));
-           // mainFrame.NavigationService.Navigate(map);
+            skill.Avatar = new BitmapImage(new Uri("../Images/precisionStrike.png", UriKind.RelativeOrAbsolute));
+            MainMap mainMap = new MainMap(myHero, mainWeapon, armor, skill);
+            mainFrame.NavigationService.Navigate(mainMap);
 
         }
 
         public void Heal_Click(object sender, RoutedEventArgs e)
         {
             skill = new PrecisionStrike("Heal", 25);
-            skill.Avatar = new BitmapImage(new Uri("WPF/Images/heal.png", UriKind.RelativeOrAbsolute));
-          //  mainFrame.NavigationService.Navigate(map);
-
+            skill.Avatar = new BitmapImage(new Uri("../Images/heal.png", UriKind.RelativeOrAbsolute));
+            MainMap mainMap = new MainMap(myHero, mainWeapon, armor, skill); 
+            mainFrame.NavigationService.Navigate(mainMap);
         }
+
         #endregion
     }
 }

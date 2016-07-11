@@ -87,6 +87,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WPF\Pages\MainMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WPF\Pages\SkillSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +110,9 @@
     </Compile>
     <Compile Include="WPF\Pages\HeroSelect.xaml.cs">
       <DependentUpon>HeroSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPF\Pages\MainMap.xaml.cs">
+      <DependentUpon>MainMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\Pages\SkillSelect.xaml.cs">
       <DependentUpon>SkillSelect.xaml</DependentUpon>
@@ -142,6 +149,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="WPF\Images\combat.jpg" />
     <Resource Include="WPF\Images\map.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +177,16 @@
     <Resource Include="WPF\Images\heal.png" />
     <Resource Include="WPF\Images\mutilate.png" />
     <Resource Include="WPF\Images\precisionStrike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\Images\matt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\Images\ork.png" />
+    <Resource Include="WPF\Images\shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\Images\treasure.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

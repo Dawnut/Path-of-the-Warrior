@@ -57,7 +57,7 @@
             From="800" To="230" Duration="0:0:1" />
                             <DoubleAnimation
             Storyboard.TargetProperty="(TextBlock.Opacity)"
-            From="0" To="1.0" Duration="0:0:3.5" />
+            From="0" To="1.0" Duration="0:0:2" />
 
                         </Storyboard>
                     </BeginStoryboard>

@@ -59,7 +59,7 @@
                                 <DoubleAnimation
             Storyboard.TargetName="Start" 
             Storyboard.TargetProperty="(TextBlock.Opacity)"
-            From="0.0" To="1.0" Duration="0:0:7" />
+            From="0.0" To="1.0" Duration="0:0:5" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -85,7 +85,7 @@
                             <DoubleAnimation
             Storyboard.TargetName="GameTitle" 
             Storyboard.TargetProperty="(TextBlock.Opacity)"
-            From="0.0" To="1.0" Duration="0:0:7" />
+            From="0.0" To="1.0" Duration="0:0:5" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
