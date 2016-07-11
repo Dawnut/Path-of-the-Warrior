@@ -8,6 +8,7 @@
 	Title="MainMap">
     <Page.Resources>
         <BitmapImage x:Key="Map" UriSource="../Images/map.jpg" />
+        <BitmapImage x:Key="Blur" UriSource="../Images/blur.jpg" />
         <BitmapImage x:Key="Combat" UriSource="../Images/combat.jpg" />
         <BitmapImage x:Key="background" UriSource="../Images/blur.jpg" />
         <BitmapImage x:Key="Heal" UriSource="../Images/heal.png" />
@@ -30,6 +31,7 @@
         <BitmapImage x:Key="Matt" UriSource="../Images/matt.png" />
         <BitmapImage x:Key="Ork" UriSource="../Images/ork.png" />
         <BitmapImage x:Key="Shadow" UriSource="../Images/shadow.png" />
+        <BitmapImage x:Key="Treasure" UriSource="../Images/treasure.png" />
 
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Green"/>
@@ -74,22 +76,38 @@
         <Image Name="Matt2" Margin="564,480,280.877,118.292" 
                Opacity="0.4"
                Source="{StaticResource Matt}"/>
+        <Canvas Margin="0,0,-0.123,-0.708" Name="heroCanvas">
+            <Image x:Name="Matt" 
+        		Opacity="0.7"
+        		Source="{StaticResource Matt}" Height="152" Width="175" Canvas.Left="55" Canvas.Top="443"/>
+            <Image x:Name="HeroImage" Height="145" Canvas.Left="55" Width="175" Canvas.Top="450"/>
+        </Canvas>
 
-        <Image Name="Matt" Margin="62,449,752.877,123.292" 
-               Opacity="0.7"
-               Source="{StaticResource Matt}"/>
-        <Image Name="HeroImage" Margin="62,449,743.877,123.292"/>
 
+        <TextBlock Name="HP"
+                   Text="  HP:"
+                   FontSize="40"
+                   FontWeight="Light"
+                   Foreground="white" 
+                   Margin="0,615,867.877,30.292"
+            />
 
-        <Button Name="heroButton"
+        <TextBlock Name="ActualHP"
+                   FontSize="40"
+                   FontWeight="Light"
+                   Foreground="White" 
+                   Margin="134,615,733.877,28.292"
+            />
+
+        <Button Name="spellButton"
                 HorizontalAlignment="Left" 
-                Margin="599,501,0,0" 
-                Click="heroButton_Click"
+                Margin="863,615,-0.123,-0.708" 
+                Click="spellButton_Click"
                 VerticalAlignment="Top" 
                 Background="Transparent"
                 Cursor="Hand"
-                Width="87" 
-                Height="88"
+                Width="137" 
+                Height="119"
                 Visibility="Visible"></Button>
 
         <Button Name="locationButton1"
@@ -127,7 +145,7 @@
                 Cursor="Hand"
                 Width="94" 
                 Height="73"
-                Visibility="Hidden">
+                Visibility="Visible">
         </Button>
 
         <Grid Name="Combat" Visibility="Hidden">
@@ -194,6 +212,72 @@
                    Width="370" Margin="630,271,-0.123,0"/>
         </Grid>
 
+        <Grid Name="GameOver" Visibility="Hidden">
+            <Grid.Background>
+                <ImageBrush ImageSource="{StaticResource Blur}" />
+            </Grid.Background>
+            <TextBlock Text="  Victory!"
+                       FontSize="90"
+                       FontWeight="light"
+                       Foreground="White"
+                       HorizontalAlignment="Center" Margin="330,31,291.877,490.292" Width="378"/>
+            <TextBlock Text="  Open your treasure.."
+                       FontSize="60"
+                       FontWeight="light"
+                       Foreground="White"
+                       HorizontalAlignment="Center" Margin="219,178,122.877,441.292" Width="658"/>
+            <TextBlock Text="  A pair of Samurai Crocs!"
+                       Name="newCrocs"
+                       Visibility="Hidden"
+                       FontSize="50"
+                       FontWeight="light"
+                       Foreground="White"
+                       HorizontalAlignment="Center" Margin="219,572,205.877,62.292" Width="575">
+            </TextBlock>
+            <Image Name="award" 
+                   Source="{StaticResource Crocs}"
+                   HorizontalAlignment="Left" 
+                   Opacity="0"
+                   Height="276" 
+                   Margin="373,297,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="276"/>
+            <Image Name="chest" 
+                   HorizontalAlignment="Left" 
+                   Height="276" Margin="373,304,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="276" 
+                   Source="{StaticResource Treasure}">
+            </Image>
+            <Button Name="chestButton"
+                HorizontalAlignment="Left" 
+                Margin="356,326,0,0" 
+                Click="chestButton_Click"
+                VerticalAlignment="Top" 
+                Background="Transparent"
+                Cursor="Hand"
+                Width="294" 
+                Height="254" >
+
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+            Storyboard.TargetName="chest" 
+            Storyboard.TargetProperty="(Image.Opacity)"
+            From="1" To="0" Duration="0:0:4" />
+                                <DoubleAnimation
+            Storyboard.TargetName="award" 
+            Storyboard.TargetProperty="(Image.Opacity)"
+            From="0" To="1" Duration="0:0:4" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+
+        </Grid>
     </Grid>
 
 </Page> 

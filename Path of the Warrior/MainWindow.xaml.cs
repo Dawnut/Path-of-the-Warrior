@@ -16,10 +16,10 @@
         HeroSelect heroSelect = new HeroSelect();
         ArmorSelect armorSelect = new ArmorSelect();
         SkillSelect skillSelect = new SkillSelect();
-        Hero myHero = new Hero();
+        Hero myHero = new Hero(30);
         Weapon mainWeapon = new Weapon();
         Armor armor = new Armor();
-        Skill skill = new Heal("FastHeal",25); // heal by default, can be changed when Player picks skill
+        Skill skill = new Heal("Heal",25); // heal by default, can be changed when Player picks skill
 
         public MainWindow()
         {
@@ -126,7 +126,7 @@
 
         public void Heal_Click(object sender, RoutedEventArgs e)
         {
-            skill = new PrecisionStrike("Heal", 25);
+            skill = new Heal("Heal", 25);
             skill.Avatar = new BitmapImage(new Uri("../Images/heal.png", UriKind.RelativeOrAbsolute));
             MainMap mainMap = new MainMap(myHero, mainWeapon, armor, skill); 
             mainFrame.NavigationService.Navigate(mainMap);

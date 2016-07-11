@@ -9,8 +9,9 @@
         private List<Item> inventory;
         public List<Item> Inventory { get { return inventory; } set { this.inventory = value; } }
 
-        public Hero() 
+        public Hero(int hp) 
         {
+            this.HP = hp;
             this.Inventory = new List<Item>();
         }
         public Hero(int hp, int dmg, List<Item> inventory) :base(hp,dmg)
