@@ -72,6 +72,7 @@
     <Compile Include="Interfaces\ISkill.cs" />
     <Compile Include="Interfaces\INameable.cs" />
     <Compile Include="Items\Consumable.cs" />
+    <Compile Include="Items\DMGPotion.cs" />
     <Compile Include="Items\HealthPotion.cs" />
     <Compile Include="Items\Trophy.cs" />
     <Compile Include="Items\Weapon.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Skills\Mutilate.cs" />
     <Compile Include="Skills\PrecisionStrike.cs" />
     <Compile Include="Skills\Skill.cs" />
+    <Compile Include="Structures\Point.cs" />
     <Compile Include="WPF\Pages\ArmorSelect.xaml.cs">
       <DependentUpon>ArmorSelect.xaml</DependentUpon>
     </Compile>
@@ -189,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="WPF\Images\treasure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
