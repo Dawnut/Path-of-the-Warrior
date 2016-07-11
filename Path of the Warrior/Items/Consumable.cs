@@ -21,16 +21,9 @@ namespace  PathOfTheWarrior.Items
             this.bonusHealth = value; 
         } 
         }
-        public virtual int DrinkPotion(ICharacter character)
+        public virtual void DrinkPotion(ICharacter character)
         {
-            if (character.HP > BonusHealth)
-            {
-               return character.HP += BonusHealth;
-            }
-            else
-            {
-                return character.HP;
-            }
+                    
         }
 
     }
