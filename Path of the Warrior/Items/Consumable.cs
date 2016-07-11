@@ -10,15 +10,16 @@ namespace  PathOfTheWarrior.Items
     public abstract class Consumable : Item
     {
 
-        private int bonusHealth;
-        public int BonusHealth { 
-            get 
+        private int bonusStat;
+        public int BonusStat
         { 
-            return bonusHealth; 
+            get 
+        {
+            return bonusStat; 
         }
             set 
-        { 
-            this.bonusHealth = value; 
+        {
+            this.bonusStat = value; 
         } 
         }
         public abstract virtual void DrinkPotion(ICharacter character)
