@@ -28,7 +28,6 @@ namespace PathOfTheWarrior.WPF.Pages
     public partial class MainMap : Page
     {
         private int spellCounter = 0;
-        private int battleCounter = 0;
         public Point heroInitial = new Point(0, 0);
         public Point mattInitial = new Point(0, 0);
         public readonly List<Point> Locations = new List<Point>
@@ -53,6 +52,25 @@ namespace PathOfTheWarrior.WPF.Pages
             Armor armor,
             Skill skill)
         {
+            //
+            // CREATING POTIONS USING FACTORY METHOD PATTERN
+            //
+
+            PotionCreator[] creators = new PotionCreator[2];
+            List<Consumable> potions = new List<Consumable>();
+
+            creators[0] = new HealthPotionCreator();
+            creators[1] = new DamagePotionCreator();
+
+            foreach (PotionCreator creator in creators)
+            {
+                Consumable product = creator.FactoryMethod();
+                potions.Add(product);
+            }
+            potions[0].Avatar = new BitmapImage(new Uri("../Images/HPpotion.png", UriKind.RelativeOrAbsolute));
+            potions[1].Avatar = new BitmapImage(new Uri("../Images/potion.png", UriKind.RelativeOrAbsolute));
+
+
             this.Myhero = myHero;
             this.MainWeapon = mainWeapon;
             this.Armor = armor;
@@ -61,14 +79,14 @@ namespace PathOfTheWarrior.WPF.Pages
                 new BitmapImage(new Uri("../Images/amulet.png", UriKind.RelativeOrAbsolute))),
                 new BitmapImage(new Uri("../Images/ork.png", UriKind.RelativeOrAbsolute)));
 
-            this.Enemy2 = new Enemy("Wolf", 25, 32, new Trophy("HP Potion", "Magic potion",
-                new BitmapImage(new Uri("../Images/HPpotion.png", UriKind.RelativeOrAbsolute))),
+            this.Enemy2 = new Enemy("Wolf", 25, 32, potions[0],  // using one of the potions here, as Loot for an Enemy
                 new BitmapImage(new Uri("../Images/shadow.png", UriKind.RelativeOrAbsolute)));
 
             this.Treasure = new Trophy("Crocs", "Ugly Shoes", new BitmapImage(new Uri("../Images/crocs.png", UriKind.RelativeOrAbsolute)));
             this.DataContext = this;
+
+
             InitializeComponent();
-           
             SetAvatars();
         }
 
@@ -94,7 +112,7 @@ namespace PathOfTheWarrior.WPF.Pages
             await Wait(2000);
 
             RevealNewLocation(locationButton1, Matt2, locationButton2, Matt3);
-            ResolveEncounter(Myhero, Enemy1, battleCounter);
+            ResolveEncounter(Myhero, Enemy1, LootImage1);
 
             Combat.Visibility = Visibility.Visible;
 
@@ -109,7 +127,7 @@ namespace PathOfTheWarrior.WPF.Pages
             await Wait(2000);
 
             RevealNewLocation(locationButton2, Matt3, locationButton3, Matt4);
-            ResolveEncounter(Myhero, Enemy2, battleCounter);
+            ResolveEncounter(Myhero, Enemy2, LootImage2);
 
             Combat.Visibility = Visibility.Visible;
         }
@@ -124,15 +142,14 @@ namespace PathOfTheWarrior.WPF.Pages
 
         }
 
-        public void ResolveEncounter(Hero hero, Enemy enemy, int battleCounter)
+        public void ResolveEncounter(Hero hero, Enemy enemy, Image lootImageN)
         {
             lostHP.Text = " " + (enemy.DMG).ToString();
             ActualHP.Text = (hero.HP - enemy.DMG).ToString();
             hero.HP -= enemy.DMG;
             hero.Inventory.Add(enemy.Loot);
-            LootImg.Source = hero.Inventory[2 + battleCounter].Avatar;
-            LootImage1.Source = hero.Inventory[2 + battleCounter].Avatar;
-            battleCounter++;
+            LootImg.Source = hero.Inventory[hero.Inventory.Count - 1].Avatar;
+            lootImageN.Source = hero.Inventory[hero.Inventory.Count - 1].Avatar;
         }
 
         public void RevealNewLocation(Button oldButton, Image oldMatt, Button newButton, Image newMatt)

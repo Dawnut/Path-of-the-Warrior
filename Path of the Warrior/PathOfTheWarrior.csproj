@@ -66,15 +66,18 @@
     <Compile Include="Characters\Hero.cs" />
     <Compile Include="Enumerations\WeaponTypes.cs" />
     <Compile Include="Exceptions\CustomException.cs" />
+    <Compile Include="Factory Method Pattern\DamagePotionCreator.cs" />
+    <Compile Include="Factory Method Pattern\HealthPotionCreator.cs" />
+    <Compile Include="Factory Method Pattern\PotionCreator.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="Interfaces\IDamageUp.cs" />
     <Compile Include="Interfaces\IHasAvatar.cs" />
     <Compile Include="Interfaces\IHealthUp.cs" />
     <Compile Include="Interfaces\ISkill.cs" />
     <Compile Include="Interfaces\INameable.cs" />
-    <Compile Include="Items\Consumable.cs" />
-    <Compile Include="Items\DMGPotion.cs" />
-    <Compile Include="Items\HealthPotion.cs" />
+    <Compile Include="Factory Method Pattern\Consumable.cs" />
+    <Compile Include="Factory Method Pattern\DamagePotion.cs" />
+    <Compile Include="Factory Method Pattern\HealthPotion.cs" />
     <Compile Include="Items\Trophy.cs" />
     <Compile Include="Items\Weapon.cs" />
     <Compile Include="Items\Armor.cs" />
@@ -145,7 +148,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="WPF\Fonts\msyi.ttf" />
-    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

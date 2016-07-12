@@ -19,7 +19,9 @@ namespace PathOfTheWarrior.Items
             this.BonusStat = bonusStat;
         }
 
-        protected Consumable(int bonusStat)
+        protected Consumable() { }
+
+        protected Consumable(int bonusStat, ImageSource avatar) :base(avatar)
         {
             this.BonusStat = bonusStat;
         }

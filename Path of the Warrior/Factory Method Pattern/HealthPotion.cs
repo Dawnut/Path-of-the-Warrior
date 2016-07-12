@@ -8,16 +8,19 @@ using System.Windows.Media;
 
 namespace PathOfTheWarrior.Items
 {
-    class DMGPotion : Consumable, IHasAvatar
+    class HealthPotion : Consumable, IHasAvatar
     {
 
-        public DMGPotion(int bonusStat)
-            : base(bonusStat) { }
+        public HealthPotion(int bonusStat, ImageSource avatar)
+            : base(bonusStat, avatar) { }
+
+        public HealthPotion() { }
 
         public override void DrinkPotion(ICharacter character)
         {
-            character.DMG += this.BonusStat;
+            character.HP += this.BonusStat;
         }
 
+        
     }
 }

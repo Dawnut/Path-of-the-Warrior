@@ -8,6 +8,8 @@
         private ImageSource avatar;
         private string name;
 
+        public Item(ImageSource avatar) { this.Avatar = avatar; }
+
         public ImageSource Avatar { get; set; }
         public string Name { get; set; }
 
