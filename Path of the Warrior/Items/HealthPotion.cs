@@ -10,7 +10,6 @@ namespace PathOfTheWarrior.Items
 {
     class HealthPotion : Consumable, IHasAvatar
     {
-        public ImageSource Avatar { get; set; }
 
         public HealthPotion(int bonusStat)
             : base(bonusStat) { }

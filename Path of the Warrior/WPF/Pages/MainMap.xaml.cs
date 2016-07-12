@@ -26,11 +26,16 @@ namespace PathOfTheWarrior.WPF.Pages
     /// </summary>
     public partial class MainMap : Page
     {
-        int spellCounter = 0;
-        double HeroOldY = 0;
-        double HeroOldX = 0;
-        double MattOldY = 0;
-        double MattOldX = 0;
+        private int spellCounter = 0;
+        private int battleCounter = 0;
+        public Point heroInitial = new Point(0, 0);
+        public Point mattInitial = new Point(0, 0);
+        public readonly List<Point> Locations = new List<Point>
+        {
+             new Point(564,480),
+             new Point(526,297),
+             new Point(105,144)
+        };
 
         public Hero Myhero { get; set; }
         public Weapon MainWeapon { get; set; }
@@ -39,7 +44,7 @@ namespace PathOfTheWarrior.WPF.Pages
         public Enemy Enemy1 { get; set; }
         public Enemy Enemy2 { get; set; }
         public Trophy Treasure { get; set; }
-
+        
         public MainMap() { }
 
         public MainMap(Hero myHero,
@@ -51,12 +56,12 @@ namespace PathOfTheWarrior.WPF.Pages
             this.MainWeapon = mainWeapon;
             this.Armor = armor;
             this.Skill = skill;
-            this.Enemy1 = new Enemy("Ork", 25, 23, new Trophy("Amulet", "Ancient Amulet", 
-                new BitmapImage(new Uri("../Images/amulet.png", UriKind.RelativeOrAbsolute))), 
+            this.Enemy1 = new Enemy("Ork", 25, 23, new Trophy("Amulet", "Ancient Amulet",
+                new BitmapImage(new Uri("../Images/amulet.png", UriKind.RelativeOrAbsolute))),
                 new BitmapImage(new Uri("../Images/ork.png", UriKind.RelativeOrAbsolute)));
-            
-            this.Enemy2 = new Enemy("Wolf", 25, 32, new Trophy("HP Potion", "Magic potion", 
-                new BitmapImage(new Uri("../Images/HPpotion.png", UriKind.RelativeOrAbsolute))), 
+
+            this.Enemy2 = new Enemy("Wolf", 25, 32, new Trophy("HP Potion", "Magic potion",
+                new BitmapImage(new Uri("../Images/HPpotion.png", UriKind.RelativeOrAbsolute))),
                 new BitmapImage(new Uri("../Images/shadow.png", UriKind.RelativeOrAbsolute)));
 
             this.Treasure = new Trophy("Crocs", "Ugly Shoes", new BitmapImage(new Uri("../Images/crocs.png", UriKind.RelativeOrAbsolute)));
@@ -79,19 +84,14 @@ namespace PathOfTheWarrior.WPF.Pages
         {
             combatHero.Source = Myhero.Avatar;
             combatEnemy.Source = Enemy1.Avatar;
-            MoveTo(HeroImage, 564, 480);
-            MoveTo(Matt, 564, 480);
+
+            MoveTo(HeroImage, Locations[0].X, Locations[0].Y);
+            MoveTo(Matt, Locations[0].X, Locations[0].Y);
             await Wait(2000);
-            locationButton1.Visibility = Visibility.Hidden;
-            Matt2.Visibility = Visibility.Hidden;
-            locationButton2.Visibility = Visibility.Visible;
-            Matt3.Visibility = Visibility.Visible;
-            lostHP.Text = " " + (Enemy1.DMG).ToString();
-            ActualHP.Text = (Myhero.HP - Enemy1.DMG).ToString();
-            Myhero.HP -= Enemy1.DMG;
-            Myhero.Inventory.Add(Enemy1.Loot);
-            LootImg.Source = Myhero.Inventory[2].Avatar; ;
-            LootImage1.Source = Enemy1.Loot.Avatar;
+
+            RevealNewLocation(locationButton1, Matt2, locationButton2, Matt3);
+            ResolveEncounter(Myhero, Enemy1, battleCounter);
+
             Combat.Visibility = Visibility.Visible;
 
         }
@@ -99,36 +99,50 @@ namespace PathOfTheWarrior.WPF.Pages
         private async void locationButton2_Click(object sender, RoutedEventArgs e)
         {
             combatEnemy.Source = Enemy2.Avatar;
-            MoveTo(HeroImage, 526, 297);
-            MoveTo(Matt, 526, 297);
+
+            MoveTo(HeroImage, Locations[1].X, Locations[1].Y);
+            MoveTo(Matt, Locations[1].X, Locations[1].Y);
             await Wait(2000);
-            locationButton2.Visibility = Visibility.Hidden;
-            Matt3.Visibility = Visibility.Hidden;
-            locationButton3.Visibility = Visibility.Visible;
-            Matt4.Visibility = Visibility.Visible;
-            lostHP.Text = " " + (Enemy2.DMG).ToString();
-            ActualHP.Text = (Myhero.HP - Enemy2.DMG).ToString();
-            Myhero.HP -= Enemy2.DMG;
-            Myhero.Inventory.Add(Enemy2.Loot);
-            LootImg.Source = Myhero.Inventory[3].Avatar; ;
-            LootImage2.Source = Enemy2.Loot.Avatar;
+
+            RevealNewLocation(locationButton2, Matt3, locationButton3, Matt4);
+            ResolveEncounter(Myhero, Enemy2, battleCounter);
+
             Combat.Visibility = Visibility.Visible;
         }
 
         private async void locationButton3_Click(object sender, RoutedEventArgs e)
         {
-            MoveTo(HeroImage, 105, 144);
-            MoveTo(Matt, 105, 144);
-            await Wait(2100);
+            MoveTo(HeroImage, Locations[2].X, Locations[2].Y);
+            MoveTo(Matt, Locations[2].X, Locations[2].Y);
+            await Wait(2000);
             award.Source = Treasure.Avatar;
             GameOver.Visibility = Visibility.Visible;
-           
+
+        }
+
+        public void ResolveEncounter(Hero hero, Enemy enemy, int battleCounter)
+        {
+            lostHP.Text = " " + (enemy.DMG).ToString();
+            ActualHP.Text = (hero.HP - enemy.DMG).ToString();
+            hero.HP -= enemy.DMG;
+            hero.Inventory.Add(enemy.Loot);
+            LootImg.Source = hero.Inventory[2 + battleCounter].Avatar;
+            LootImage1.Source = hero.Inventory[2 + battleCounter].Avatar;
+            battleCounter++;
+        }
+
+        public void RevealNewLocation(Button oldButton, Image oldMatt, Button newButton, Image newMatt)
+        {
+            oldButton.Visibility = Visibility.Hidden;
+            oldMatt.Visibility = Visibility.Hidden;
+            newButton.Visibility = Visibility.Visible;
+            newMatt.Visibility = Visibility.Visible;
         }
 
         public void MoveTo(Image target, double newX, double newY)
         {
             Vector offset = VisualTreeHelper.GetOffset(target);
-           
+
             double oldY = 0;
             double oldX = 0;
             var top = offset.Y;
@@ -136,13 +150,13 @@ namespace PathOfTheWarrior.WPF.Pages
 
             if (target == HeroImage)
             {
-                oldX = HeroOldX;
-                oldY = HeroOldY;
+                oldX = heroInitial.X;
+                oldY = heroInitial.Y;
             }
             else
             {
-                oldX = MattOldX;
-                oldY = MattOldY;
+                oldX = mattInitial.X;
+                oldY = mattInitial.Y;
             }
 
             TranslateTransform trans = new TranslateTransform();
@@ -153,13 +167,13 @@ namespace PathOfTheWarrior.WPF.Pages
             trans.BeginAnimation(TranslateTransform.XProperty, anim2);
             if (target == HeroImage)
             {
-                HeroOldX = newX - left;
-                HeroOldY = newY - top;
+                heroInitial.X = newX - left;
+                heroInitial.Y = newY - top;
             }
             else
             {
-                MattOldX = newX - left;
-                MattOldY = newY - top;
+                mattInitial.X = newX - left;
+                mattInitial.Y = newY - top;
             }
         }
 

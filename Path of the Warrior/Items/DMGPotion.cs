@@ -10,7 +10,6 @@ namespace PathOfTheWarrior.Items
 {
     class DMGPotion : Consumable, IHasAvatar
     {
-        public ImageSource Avatar { get; set; }
 
         public DMGPotion(int bonusStat)
             : base(bonusStat) { }

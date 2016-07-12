@@ -27,24 +27,6 @@
             ApplyEventHandlers();
         }
 
-        private void ApplyEventHandlers()
-        {
-            myHero.Inventory.Add(mainWeapon);
-            myHero.Inventory.Add(armor);
-            mainFrame.NavigationService.Navigate(startPage);
-            startPage.startButton.Click += startButton_Click;
-            heroSelect.swordsmanButton.Click += Swordsman_Click;
-            heroSelect.spearmanButton.Click += Spearman_Click;
-            heroSelect.archerButton.Click += Archer_Click;
-            armorSelect.lightButton.Click += Light_Click;
-            armorSelect.mediumButton.Click += Medium_Click;
-            armorSelect.heavyButton.Click += Heavy_Click;
-            skillSelect.mutilateButton.Click += Mutilate_Click;
-            skillSelect.healButton.Click += Heal_Click;
-            skillSelect.precisionButton.Click += PrecisionStrike_Click;
-        }
-
-        #region EventHandlers from all pages
 
 
         private void startButton_Click(object sender, RoutedEventArgs e)
@@ -132,6 +114,21 @@
             mainFrame.NavigationService.Navigate(mainMap);
         }
 
-        #endregion
+        private void ApplyEventHandlers()
+        {
+            myHero.Inventory.Add(mainWeapon);
+            myHero.Inventory.Add(armor);
+            mainFrame.NavigationService.Navigate(startPage);
+            startPage.startButton.Click += startButton_Click;
+            heroSelect.swordsmanButton.Click += Swordsman_Click;
+            heroSelect.spearmanButton.Click += Spearman_Click;
+            heroSelect.archerButton.Click += Archer_Click;
+            armorSelect.lightButton.Click += Light_Click;
+            armorSelect.mediumButton.Click += Medium_Click;
+            armorSelect.heavyButton.Click += Heavy_Click;
+            skillSelect.mutilateButton.Click += Mutilate_Click;
+            skillSelect.healButton.Click += Heal_Click;
+            skillSelect.precisionButton.Click += PrecisionStrike_Click;
+        }
     }
 }

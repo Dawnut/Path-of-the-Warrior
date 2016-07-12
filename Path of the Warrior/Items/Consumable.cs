@@ -24,8 +24,6 @@ namespace PathOfTheWarrior.Items
             this.BonusStat = bonusStat;
         }
 
-        public ImageSource Avatar { get; set; }
-
         public int BonusStat
         {
             get
@@ -37,10 +35,7 @@ namespace PathOfTheWarrior.Items
                 this.bonusStat = value;
             }
         }
-        public abstract virtual void DrinkPotion(ICharacter character)
-        {
-
-        }
+        public abstract void DrinkPotion(ICharacter character);
 
     }
 }
