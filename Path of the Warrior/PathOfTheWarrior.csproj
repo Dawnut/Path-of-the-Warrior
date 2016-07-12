@@ -201,6 +201,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="exe\Path of the Warrior.vshost.exe" />
+    <Content Include="exe\PathOfTheWarrior.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
