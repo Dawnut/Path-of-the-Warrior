@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="PathOfTheWarrior.WPF.App" Collapsed="true">
-    <Position X="2.25" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.WPF.MainWindow" Collapsed="true">
-    <Position X="11" Y="9.5" Width="1.5" />
+    <Position X="2.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAABAIAAGBAAAAEAQQQAAAAAAAQAARAAAYABAQAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.Characters.Character" Collapsed="true">
-    <Position X="9" Y="5.75" Width="1.5" />
+    <Position X="1.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAYAAAQEQAAEAAAAAABAAAAAAAA=</HashCode>
       <FileName>Characters\Character.cs</FileName>
@@ -23,7 +23,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Characters.Enemy" Collapsed="true">
-    <Position X="7.75" Y="7.25" Width="1.5" />
+    <Position X="0.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Characters\Enemy.cs</FileName>
@@ -31,7 +31,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Characters.Hero" Collapsed="true">
-    <Position X="10" Y="7.25" Width="1.5" />
+    <Position X="2.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAA=</HashCode>
       <FileName>Characters\Hero.cs</FileName>
@@ -39,7 +39,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Exceptions.CustomException" Collapsed="true">
-    <Position X="12.25" Y="6.5" Width="1.5" />
+    <Position X="10" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\CustomException.cs</FileName>
@@ -57,7 +57,7 @@
     <Position X="6.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA=</HashCode>
-      <FileName>Items\Consumable.cs</FileName>
+      <FileName>Factory Method Pattern\Consumable.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -65,7 +65,7 @@
     <Position X="5.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\DamagePotion.cs</FileName>
+      <FileName>Factory Method Pattern\DamagePotion.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -73,7 +73,7 @@
     <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\HealthPotion.cs</FileName>
+      <FileName>Factory Method Pattern\HealthPotion.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -102,19 +102,19 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Properties.Resources" Collapsed="true">
-    <Position X="12.75" Y="10.25" Width="1.5" />
+    <Position X="7.5" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.Properties.Settings" Collapsed="true">
-    <Position X="9.25" Y="9.5" Width="1.5" />
+    <Position X="0.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.Skills.Heal" Collapsed="true">
-    <Position X="2.75" Y="7.5" Width="1.5" />
+    <Position X="4" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Skills\Heal.cs</FileName>
@@ -122,7 +122,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Skills.Mutilate" Collapsed="true">
-    <Position X="5.25" Y="7.25" Width="1.5" />
+    <Position X="6.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Skills\Mutilate.cs</FileName>
@@ -130,7 +130,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Skills.PrecisionStrike" Collapsed="true">
-    <Position X="0.5" Y="7.25" Width="1.5" />
+    <Position X="1.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Skills\PrecisionStrike.cs</FileName>
@@ -138,7 +138,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.Skills.Skill" Collapsed="true">
-    <Position X="2.75" Y="5.75" Width="1.5" />
+    <Position X="4" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAARAAAQAQCAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Skills\Skill.cs</FileName>
@@ -146,91 +146,112 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="PathOfTheWarrior.WPF.Pages.ArmorSelect" Collapsed="true">
-    <Position X="4" Y="9.5" Width="1.5" />
+    <Position X="4" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAABAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>WPF\Pages\ArmorSelect.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.WPF.Pages.HeroSelect" Collapsed="true">
-    <Position X="7.5" Y="9.5" Width="1.5" />
+    <Position X="4" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAEAAQAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>WPF\Pages\HeroSelect.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.WPF.Pages.MainMap" Collapsed="true">
-    <Position X="0.5" Y="9.5" Width="1.5" />
+    <Position X="2.25" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>kAAAAgAgAAAIAAAAAhIAAAgAADUIAAgAEAEEAAAAAAE=</HashCode>
       <FileName>WPF\Pages\MainMap.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.WPF.Pages.SkillSelect" Collapsed="true">
-    <Position X="5.75" Y="9.5" Width="1.5" />
+    <Position X="5.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>WPF\Pages\SkillSelect.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PathOfTheWarrior.WPF.Pages.StartPage" Collapsed="true">
-    <Position X="12.75" Y="9.5" Width="1.5" />
+    <Position X="5.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WPF\Pages\StartPage.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="PathOfTheWarrior.Items.DamagePotionCreator" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory Method Pattern\DamagePotionCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PathOfTheWarrior.Items.HealthPotionCreator" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory Method Pattern\HealthPotionCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PathOfTheWarrior.Items.PotionCreator" Collapsed="true">
+    <Position X="6.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory Method Pattern\PotionCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="PathOfTheWarrior.Structures.Point" Collapsed="true">
-    <Position X="12.25" Y="5.75" Width="1.5" />
+    <Position X="10" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Structures\Point.cs</FileName>
     </TypeIdentifier>
   </Struct>
   <Interface Name="PathOfTheWarrior.Interfaces.ICharacter" Collapsed="true">
-    <Position X="12.25" Y="2" Width="1.5" />
+    <Position X="10" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ICharacter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PathOfTheWarrior.Interfaces.IDamageUp" Collapsed="true">
-    <Position X="12.25" Y="3.5" Width="1.5" />
+    <Position X="10" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IDamageUp.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PathOfTheWarrior.Interfaces.IHasAvatar" Collapsed="true">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+    <Position X="10" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IHasAvatar.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PathOfTheWarrior.Interfaces.IHealthUp" Collapsed="true">
-    <Position X="12.25" Y="1.25" Width="1.5" />
+    <Position X="10" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Interfaces\IHealthUp.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PathOfTheWarrior.Interfaces.INameable" Collapsed="true">
-    <Position X="12.25" Y="2.75" Width="1.5" />
+    <Position X="10" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\INameable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="PathOfTheWarrior.Interfaces.ISkill" Collapsed="true">
-    <Position X="12.25" Y="4.25" Width="1.5" />
+    <Position X="10" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ISkill.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="PathOfTheWarrior.Enumerations.WeaponType" Collapsed="true">
-    <Position X="12.25" Y="5" Width="1.5" />
+    <Position X="10" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAQAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enumerations\WeaponTypes.cs</FileName>

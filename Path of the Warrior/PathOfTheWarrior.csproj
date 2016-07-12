@@ -198,8 +198,9 @@
   <ItemGroup>
     <Resource Include="WPF\Images\treasure.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="exe\" />
+    <Content Include="exe\Path of the Warrior.vshost.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
