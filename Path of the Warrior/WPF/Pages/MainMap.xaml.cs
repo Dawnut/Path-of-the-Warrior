@@ -18,6 +18,7 @@ using PathOfTheWarrior.Items;
 using PathOfTheWarrior.Skills;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using PathOfTheWarrior.Exceptions;
 
 namespace PathOfTheWarrior.WPF.Pages
 {
@@ -44,7 +45,7 @@ namespace PathOfTheWarrior.WPF.Pages
         public Enemy Enemy1 { get; set; }
         public Enemy Enemy2 { get; set; }
         public Trophy Treasure { get; set; }
-        
+
         public MainMap() { }
 
         public MainMap(Hero myHero,
@@ -67,8 +68,11 @@ namespace PathOfTheWarrior.WPF.Pages
             this.Treasure = new Trophy("Crocs", "Ugly Shoes", new BitmapImage(new Uri("../Images/crocs.png", UriKind.RelativeOrAbsolute)));
             this.DataContext = this;
             InitializeComponent();
+           
             SetAvatars();
         }
+
+       
 
         public void SetAvatars()
         {
@@ -188,15 +192,40 @@ namespace PathOfTheWarrior.WPF.Pages
             await Task.Delay(time);
         }
 
-        private void spellButton_Click(object sender, RoutedEventArgs e)
+        private async void spellButton_Click(object sender, RoutedEventArgs e)
         {
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
 
-            if (Skill.Name == "Heal" && spellCounter < 3)
+            try
             {
-                Myhero.HP += 20;
-                ActualHP.Text = Myhero.HP.ToString();
-                spellCounter++;
+                if (Skill.Name == "Heal" && spellCounter < 3)
+                {
+                    Myhero.HP += 20;
+                    ActualHP.Text = Myhero.HP.ToString();
+                    spellCounter++;
+                }
+                else if (spellCounter >= 3)
+                {
+                    throw new CustomException("You wasted all the Paracetamol!");
+                }
+                else if (Skill.Name != "Heal")
+                {
+                    throw new CustomException("This skill is on permanent cooldown!");
+                }
             }
+            catch (CustomException ex)
+            {
+                SpellException.Text = ex.Message;
+                SpellException.Visibility = Visibility.Visible;
+                dispatcherTimer.Start();
+            }
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            SpellException.Visibility = Visibility.Hidden;
         }
 
         private void chestButton_Click(object sender, RoutedEventArgs e)

@@ -83,20 +83,26 @@
             <Image x:Name="HeroImage" Height="145" Canvas.Left="55" Width="175" Canvas.Top="450"/>
         </Canvas>
 
+        <TextBlock Name="SpellException"
+                   FontSize="50"
+                   FontWeight="bold"
+                   Foreground="white" 
+                   Margin="66,370,-0.123,258.292"
+            />
 
         <TextBlock Name="HP"
                    Text="  HP:"
                    FontSize="40"
                    FontWeight="Light"
                    Foreground="white" 
-                   Margin="0,615,867.877,30.292"
+                   Margin="0,642,867.877,2.292"
             />
 
         <TextBlock Name="ActualHP"
                    FontSize="40"
                    FontWeight="Light"
                    Foreground="White" 
-                   Margin="101,615,766.877,27.292"
+                   Margin="101,642,766.877,-0.708"
             />
 
         <Button Name="spellButton"

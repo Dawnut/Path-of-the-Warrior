@@ -65,6 +65,7 @@
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Characters\Hero.cs" />
     <Compile Include="Enumerations\WeaponTypes.cs" />
+    <Compile Include="Exceptions\CustomException.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="Interfaces\IDamageUp.cs" />
     <Compile Include="Interfaces\IHasAvatar.cs" />
@@ -112,6 +113,8 @@
     <Compile Include="WPF\Pages\ArmorSelect.xaml.cs">
       <DependentUpon>ArmorSelect.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Pages\Forms.cs" />
+    <Compile Include="WPF\Pages\Forms_2.cs" />
     <Compile Include="WPF\Pages\HeroSelect.xaml.cs">
       <DependentUpon>HeroSelect.xaml</DependentUpon>
     </Compile>
@@ -193,7 +196,6 @@
     <Resource Include="WPF\Images\treasure.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exceptions\" />
     <Folder Include="exe\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
